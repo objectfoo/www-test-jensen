@@ -18,7 +18,5 @@
   "devDependencies": {
     "standard": "10.x.x"
   },
-  "dependencies": {
-    "dotenv": "4.0.x"
-  }
+  "dependencies": {}
 }

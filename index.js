@@ -1,12 +1,5 @@
-require('dotenv').config()
-
-var host = process.env.TEST_HOST
-var port = process.env.TEST_PORT
-
-process.argv.forEach(function (val, index, array) {
-  console.log(index + ': ' + val)
-})
-
+var host = process.env.TEST_HOST || '127.0.0.1'
+var port = process.env.TEST_PORT || 8282
 var http = require('http')
 
 var server = http.createServer(function (req, res) {
