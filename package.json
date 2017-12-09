@@ -1,0 +1,24 @@
+{
+  "name": "www-test-jensen",
+  "private": true,
+  "engines": {
+    "node": ">=0.10.46 <= 8.9.1"
+  },
+  "version": "0.1.0",
+  "description": "",
+  "standard": {},
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "10.x.x"
+  },
+  "dependencies": {
+    "dotenv": "4.0.x"
+  }
+}
