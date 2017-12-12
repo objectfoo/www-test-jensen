@@ -1,13 +1,25 @@
-var host = process.env.TEST_HOST || '127.0.0.1'
-var port = process.env.TEST_PORT || 8282
 var http = require('http')
+var args = process.argv.slice(2)
+var port = 8282
+var portIdx
+var server
+var newPort
 
-var server = http.createServer(function (req, res) {
+// parse port
+portIdx = args.indexOf('--port')
+if (portIdx >= 0 && args[portIdx + 1]) {
+  newPort = parseInt(args[portIdx + 1], 10) // could be NaN
+  if (newPort) {
+    port = newPort;
+  }
+}
+
+server = http.createServer(function (req, res) {
   res.statusCode = 200
   res.setHeader('Content-Type', 'text/plain')
   res.end('Hello World\n')
 })
 
-server.listen(port, host, function () {
-  console.log('Server running at http://' + host + ':' + port + '/')
+server.listen(port, 'localhost', function () {
+  console.log('Server running on port: ' + server.address().port)
 })
