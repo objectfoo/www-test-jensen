@@ -20,6 +20,6 @@ server = http.createServer(function (req, res) {
   res.end('Hello World\n')
 })
 
-server.listen(port, 'localhost', function () {
+server.listen(port, null, function () {
   console.log('Server running on port: ' + server.address().port)
 })
